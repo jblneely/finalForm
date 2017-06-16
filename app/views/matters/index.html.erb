@@ -1,0 +1,12 @@
+
+
+<h3 class="text-center">Matters (A-Z)</h3>
+<div class="container">
+	<% @matters.each do |p| %>
+		<div class="alert alert-success">
+			<a href="/matters/<%= p.id %>">
+				<%= p.title %>
+			</a>
+		</div>
+	<% end %>
+</div>

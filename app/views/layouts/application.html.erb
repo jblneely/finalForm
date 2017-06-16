@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FF</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/64e13a3fcc.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand text-center" href="/"></a>
+      </div>  
+      <ul class="nav navbar-nav"> 
+        <li class="active">
+          <a href="/"><%= image_tag("lgLogo.png", :alt => "logo") %><%= Time.now.strftime('%A %B %d %Y') %></a>
+        </li>
+        <li>
+          <a href="/matters">Matters</a>
+        </li>
+        <li>
+          <a href="/actns">Activities</a>
+        </li>
+        <li>
+          <a href="/matters/new">New Matter</a>
+        </li>
+        <li>
+          <a href="/actns/new">New Activity</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="row">
+      <%= form_tag '/search/' do %>
+      <div class="col-xs-2">
+        <%= text_field_tag 'artist', '...', class: 'form-control' %>
+      </div>
+      <div class="col-xs-2">
+        <%= button_tag(type: 'submit', class: 'btn btn-basic') do %><i class="fa fa-music" aria-hidden="true"></i>
+          <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+    </nav>
+    
+    <%= yield %>
+  </body>
+</html>

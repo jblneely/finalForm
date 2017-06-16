@@ -1,0 +1,26 @@
+<h1 class="text-center">Activity <%= @actn.title %> Details</h1>
+<h4 class="text-center">Activity <%= @actn.title %></h4>
+
+<h2 class="text-center">Matters associated with <%= @actn.title %></h2>
+
+<div class="container text-center">
+	<% if @actn.matters.length > 0 %>
+		<% @actn.matters.each do |p| %>
+			<div class="alert alert-info">
+				<h3>
+					<a href="/matters/<%= p.id %>"><%= p.title %></a>
+				</h3>	
+			</div>
+		<% end %>
+	<% else %>
+		<div class="alert alert-info">
+			Activity <%= @actn.title %> is not connected to a Matter.
+		</div>
+		</div>
+			<%= link_to 'Edit Action', edit_actn_path(@actn), method: :get, :class => "btn btn-warning" %>
+			<%= link_to 'Delete Action', actn_path(@actn), method: :delete, :class => "btn btn-danger" %>
+	</div>
+
+	<% end %>
+</div>
+

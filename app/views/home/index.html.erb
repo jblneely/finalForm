@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="multidatepicker.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+<h1 class="text-center"></h1>
+ 
+<div class="text-center">
+<!-- 	<%= image_tag("trebWhite.png", :alt => "trebuchet") %> -->
+<h3 class="text-center"> CALENDAR<hr>[Year, Month, Week, Day]</h3>
+<div id="calendar"></div>
+</div>
+<hr>
+<h1>Calendar Example</h1>
+  <h4>
+    See source and documentation on this plugin
+    <a href="http://dubrox.github.io/Multiple-Dates-Picker-for-jQuery-UI/#demo-pre-select-dates">
+      HERE
+    </a>
+  </h4>
+  <div id="calendar"></div>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="multidatepicker.js"></script>
+  <script> 
+  var the_dates = "<%= @dates %>";
+  the_dates = the_dates.replace(/&quot;/g, '"');
+  console.log(JSON.parse(the_dates));
+  $(document).ready(function(){
+	  var date = new Date();
+	  $('#calendar').multiDatesPicker({
+	    addDates: JSON.parse(the_dates)
+	  });
+	});
+
+  </script>
+
