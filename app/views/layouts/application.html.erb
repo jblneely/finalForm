@@ -41,19 +41,18 @@
         </li>
       </ul>
     </div>
-    <div class="example" data-timer="900"></div>
+    <div class="row">
+    <div class="example stopwatch"></div>
       <button class="btn btn-success start">Start</button>
       <button class="btn btn-danger stop">Stop</button>
       <button class="btn btn-info restart">Restart</button>
-        <div class="container">
-          <div class="timecircles">
             <script>$(".example").TimeCircles();
-              $(".example").TimeCircles();
-              $(".start").click(function(){ $(".example").TimeCircles().start(); });
-              $(".stop").click(function(){ $(".example").TimeCircles().stop(); });
-              $(".restart").click(function(){ $(".example").TimeCircles().restart(); }); 
+              $(".example.stopwatch").TimeCircles();
+              $(".start").click(function(){ $(".example.stopwatch").TimeCircles().start(); });
+              $(".stop").click(function(){ $(".example.stopwatch").TimeCircles().stop(); });
+              $(".restart").click(function(){ $(".example.stopwatch").TimeCircles().restart(); }); 
             </script>         
-          </div>
+    </div>
     </div>
     <hr>
     <div class="row">
