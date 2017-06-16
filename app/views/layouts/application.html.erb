@@ -11,6 +11,10 @@
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/64e13a3fcc.js"></script>
+    <!-- timecircles Scripts -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="TimeCircles.js"></script>
+    <link href="TimeCircles.css" rel="stylesheet">         
   </head>
 
   <body>
@@ -37,7 +41,21 @@
         </li>
       </ul>
     </div>
-    
+    <div class="example" data-timer="900"></div>
+      <button class="btn btn-success start">Start</button>
+      <button class="btn btn-danger stop">Stop</button>
+      <button class="btn btn-info restart">Restart</button>
+        <div class="container">
+          <div class="timecircles">
+            <script>$(".example").TimeCircles();
+              $(".example").TimeCircles();
+              $(".start").click(function(){ $(".example").TimeCircles().start(); });
+              $(".stop").click(function(){ $(".example").TimeCircles().stop(); });
+              $(".restart").click(function(){ $(".example").TimeCircles().restart(); }); 
+            </script>         
+          </div>
+    </div>
+    <hr>
     <div class="row">
       <%= form_tag '/search/' do %>
       <div class="col-xs-2">

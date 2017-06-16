@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'httparty' #for making API calls
 gem 'json' #for understanding API responses
 gem 'bootstrap-sass'
+gem 'rails_12factor', group: :production
 
 
 # Use Capistrano for deployment
